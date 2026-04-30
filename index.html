@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<!-- Created by: Tunar Mammadov -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tunarnn</title>
+  <meta name="description"
+    content="Portfolio, resume, and projects of Tunar Mammadov — Computer Engineering student focusing on Data Science and AI.">
+  <meta name="keywords"
+    content="Tunar Mammadov, portfolio, resume, data science, AI, computer engineering, data engineering">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">....</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#memory-game">Memory Game</a></li>
+
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background animated-gradient floating-shapes">
+
+      <img src="assets/img/hero-img.jpg" alt="" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up"
+        data-aos-delay="100">
+        <h2>I am Tunar Mammadov</h2>
+        <p><span class="typed" data-typed-items=" Freelancer, Data Scientist, Data Analayst, Data Engineer"></span></p>
+      </div>
+
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- Memory Game Section (ONLY ONE - FIXED) -->
+    <section id="memory-game" class="memory-game section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Memory Game</h2>
+          <p>Flip cards and find all matching pairs.</p>
+        </div>
+
+        <div class="memory-game-wrap">
+          <div class="mg-controls">
+            <div class="mg-left">
+              <label for="mgDifficulty" class="form-label mb-0">Difficulty</label>
+              <select id="mgDifficulty" class="form-select">
+                <option value="easy" selected>Easy (4×3)</option>
+                <option value="hard">Hard (6×4)</option>
+              </select>
+            </div>
+
+            <div class="mg-right">
+              <button id="mgStartBtn" type="button" class="btn btn-primary">Start</button>
+              <button id="mgRestartBtn" type="button" class="btn btn-outline-primary">Restart</button>
+              <!-- Pause button can be created by JS -->
+            </div>
+          </div>
+
+          <div class="mg-stats mt-3">
+            <div><strong>Moves:</strong> <span id="mgMoves">0</span></div>
+            <div><strong>Matches:</strong> <span id="mgMatches">0</span></div>
+            <div><strong>Time:</strong> <span id="mgTime">00:00</span></div>
+            <div class="mg-best" id="mgBest">Best Easy: — | Best Hard: —</div>
+          </div>
+
+          <!-- Optional accessibility improvement -->
+          <div id="mgWin" class="mg-win" role="status" aria-live="polite">You won!</div>
+
+          <!-- FIX: aria-label on div requires non-generic role -->
+          <div id="mgBoard" class="mg-board is-disabled" role="grid" aria-label="Memory game board"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Memory Game Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="assets/img/profile-img.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong> </strong> <span> </span></p>
+                <p><strong> </strong> <span> </span></p>
+                <p><strong> </strong> <span> </span></p>
+                <p><strong>Name: </strong> <span>Tunar Mammadov</span></p>
+                <p><strong>Profile: </strong> <span>Data Scientist</span></p>
+                <p><strong>Email: </strong> <span>tunar.memmedov2007@gmail.com</span></p>
+                <p><strong>Phone: </strong> <span>(370)-62451171</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5>Skills</h5>
+
+              <div class="progress">
+                <span class="skill"><span>HTML</span> <i class="val">40%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>C++</span> <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Python</span> <i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Kicad</span> <i class="val">55%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>About me</h4>
+              <p>
+                I’m a Computer Engineering student with a strong interest in Data Science, AI, and building practical,
+                user-focused
+                solutions. I enjoy transforming raw data into clean, reproducible pipelines and insightful
+                visualizations. My projects
+                span predictive modeling, interactive dashboards, and recommendation systems. I value clarity in code,
+                testing, and
+                documentation that supports collaboration and reusability.
+              </p>
+              <p>
+                I value clarity in code, testing, and
+                documentation that supports collaboration and reusability. I’m eager to keep learning through real-world
+                projects
+                involving data analysis, machine learning, and performance optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Education and selected experience.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Tunar Mammadov</h4>
+              <p><em>Innovative and deadline-driven Data analayst with 3+ years of experience designing and
+                  developing user-centered digital/print marketing material from initial concept to final, polished
+                  deliverable.</em></p>
+              <ul>
+                <li>Sauletekis 25 aleja, Vilnius</li>
+                <li>(370) 624-51171</li>
+                <li>tunar.memmedov2007@gmail.com</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Electronics &amp; Computer Engineering</h4>
+              <h5>2024 - 2028</h5>
+              <p><em>Vilnius Technical University, Vilnius, LIthuania</em></p>
+              <p>Focus on Data Science and AI. Projects include an OOP ML pipeline and an energy simulator.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Bachelor of Economics &amp; Finance</h4>
+              <h5>2022 - 2024</h5>
+              <p><em>Khazar University, Baku, Azerbaijan</em></p>
+              <p>Operations research, statistics, and systems analysis with practical coursework.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Junior Data Scientist</h4>
+              <h5>2019 - 2020</h5>
+              <p><em>Experion, Vilnius </em></p>
+              <ul>
+                <li>Lead in the design, development, and implementation of advanced machine learning models and
+                  data-driven solutions.</li>
+                <li>Delegate tasks to the 7 members of the data science team and provide counsel on all aspects of
+                  analytics projects. </li>
+                <li>Supervise the assessment and validation of predictive models to ensure accuracy and reliability of
+                  results.</li>
+                <li>Oversee the efficient use of project budgets ranging from $50,000 - $250,000 for analytics
+                  infrastructure and
+                  experimentation.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Data Analyst</h4>
+              <h5>2019 - 2019</h5>
+              <p><em>Stepping Stone Advertising, New York, NY</em></p>
+              <ul>
+                <li>Developed numerous analytical dashboards and data visualizations using SQL, Power BI, and Python.
+                </li>
+                <li>Managed up to 5 analytics projects simultaneously while meeting tight deadlines.</li>
+                <li>Recommended and consulted with clients on optimal data reporting strategies and KPIs.</li>
+                <li>Created 4+ performance reports and data summaries per month for stakeholders and project managers.
+                </li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Junior Data Scientist</h4>
+              <h5>2019 - 2019</h5>
+              <p><em>NovaTech Solutions, Boston, MA</em></p>
+              <ul>
+                <li>Assisted in building regression and classification models to support business decision-making.</li>
+                <li>Collected, cleaned, and transformed large datasets using Python (pandas, NumPy) and SQL.</li>
+                <li>Supported senior scientists in evaluating model accuracy and optimizing feature engineering
+                  processes.</li>
+                <li>Prepared weekly analytical reports to communicate insights to technical and non-technical audiences.
+                </li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Helping organizations understand their data and make informed choices.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Data Cleaning & Preparation</h3>
+              </a>
+              <p>I provide professional data cleaning and preprocessing services to ensure datasets are accurate,
+                consistent, and ready
+                for analysis.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Dashboard & Visualization Design</h3>
+              </a>
+              <p>I design clear and interactive dashboards using Power BI, Tableau, or Python visualization libraries.
+              </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Business Data Analysis & Reporting</h3>
+              </a>
+              <p>I analyze sales, marketing, and operational data to uncover trends and optimize business performance.
+              </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Predictive Analytics & Forecasting</h3>
+              </a>
+              <p>I develop predictive models to estimate future trends such as sales demand, customer churn, or market
+                behavior.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+        <!-- Custom Media Content -->
+        <div class="row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
+
+          <!-- Local video -->
+          <div class="col-lg-4 col-md-6 text-center">
+            <h4>Intro Video</h4>
+            <video class="w-100" controls>
+              <source src="assets/video/data-intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- YouTube embedded video -->
+          <div class="col-lg-4 col-md-6 text-center">
+            <h4>Watch on YouTube</h4>
+            <iframe class="w-100" height="215" src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              title="YouTube video player" style="border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Audio recording -->
+          <div class="col-lg-4 col-md-6 text-center">
+            <h4>Audio Presentation</h4>
+            <audio controls>
+              <source src="assets/audio/data-presentation.mp3" type="audio/mpeg">
+              Your browser does not support the audio tag.
+            </audio>
+          </div>
+
+        </div><!-- End Custom Media Content -->
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section accent-background">
+
+      <h2 class="visually-hidden">Stats</h2>
+
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="0"
+                class="purecounter">12</span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="0"
+                class="purecounter">30</span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="504" data-purecounter-duration="0"
+                class="purecounter">500</span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="0"
+                class="purecounter">32</span>
+              <p>Employees</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Analytical thinker delivering data-driven solutions for business growth.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">ML</li>
+            <li data-filter=".filter-product">Data analysis</li>
+            <li data-filter=".filter-branding">Data engineering</li>
+            <li data-filter=".filter-books">Script Programing</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>SpaceX Falcon 9</h4>
+                <p>Machine learning model predicting rocket landings.</p>
+                <a href="assets/img/portfolio/app-1.jpg" title="SpaceX Falcon 9" data-gallery="portfolio-gallery-app"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                    class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Airline Data Analysis</h4>
+                <p>Visual analytics revealing flight trends and performance.</p>
+                <a href="assets/img/portfolio/product-1.jpg" title="Airline Data Analysis"
+                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                    class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                    class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>NextOnNetflix</h4>
+                <p>AI-driven movie recommendations with sentiment insights.</p>
+                <a href="assets/img/portfolio/branding-1.jpg" title="NextOnNetflix"
+                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                    class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                    class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Script Programing</h4>
+                <p>Matlab Functions</p>
+                <a href="assets/img/portfolio/books-1.jpg" title="Script Programing"
+                  data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                    class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Delivering end-to-end data solutions for smarter business decisions.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 gx-lg-5">
+          <div class="pricing-header-row d-flex justify-content-between">
+            <span>Service</span>
+            <span>Price</span>
+          </div>
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Data Cleaning & Preparation</h3>
+              <h4>$160.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Dashboard & Visualization Design</h3>
+              <h4>$300.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Business Data Analysis & Reporting</h3>
+              <h4>$200.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Predictive Modeling & Forecasting</h3>
+              <h4>$120.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Data Automation & Scripting</h3>
+              <h4>$500.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>End-to-End Analytics Consulting</h3>
+              <h4>$200.00</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Answers to common questions about my data analytics workflow, tools, and collaboration process.
+              </p>
+              <ol class="numbered-list">
+                <li>Define the business problem</li>
+                <li>Collect and clean the data</li>
+                <li>Train and evaluate the model</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>How long does a typical data project take?</span></h3>
+                <div class="faq-content">
+                  <p>Project timelines depend on data size and complexity.
+                    A basic dashboard or analysis usually takes 1–2 weeks, while full predictive modeling or automation
+                    can
+                    take 3–6 weeks.
+                    I always provide clear milestones and weekly progress updates.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>Which tools and technologies do you use?</span></h3>
+                <div class="faq-content">
+                  <p>I mainly work with Python (pandas, NumPy, scikit-learn), SQL, Power BI, and Tableau.
+                    For automation and deployment, I also use Git, Docker, and Streamlit.
+                    Every project uses the most suitable stack for performance and scalability.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>Can you work with incomplete or messy datasets?</span>
+                </h3>
+                <div class="faq-content">
+                  <p>Yes — cleaning and structuring messy datasets is one of my core skills.
+                    I handle missing values, outliers, and data inconsistencies using advanced preprocessing techniques.
+                    This ensures reliable, high-quality results in the later analysis stages.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>Do you provide documentation and visual reports?</span>
+                </h3>
+                <div class="faq-content">
+                  <p>Absolutely. Every project includes a detailed report, clear visualizations, and an executive
+                    summary.
+                    You’ll also receive the cleaned dataset, code, and visual dashboard for transparency.
+                    The goal is to make insights understandable for both technical and non-technical audiences.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>Can you customize solutions for specific business needs?</span>
+                </h3>
+                <div class="faq-content">
+                  <p>Yes, each project is fully tailored to the client’s goals.
+                    Whether it’s customer segmentation, sales forecasting, or KPI automation — the solution fits your
+                    data
+                    context.
+                    I focus on delivering actionable, measurable impact rather than generic templates.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section accent-background">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Laura Peterson</h3>
+                <h4>Marketing Director, DataWave Inc.</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Tunar transformed our raw marketing data into clear dashboards that helped us boost campaign
+                    efficiency by 40%. His attention to detail and communication made the whole process seamless.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Michael Rodriguez</h3>
+                <h4>Senior Data Engineer, TechNova</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>His predictive models significantly improved our demand forecasting accuracy. Tunar’s structured
+                    approach and technical expertise stood out from the very first meeting.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Emily Carter</h3>
+                <h4>Project Manager, AirAnalytics</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Working with Tunar was a pleasure — he built an interactive flight analytics dashboard that
+                    helped
+                    our management visualize key operational metrics in real-time.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>David Kim</h3>
+                <h4>Founder, InsightFlow Solutions</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>His ability to explain complex analytics concepts to non-technical stakeholders was invaluable.
+                    The
+                    Power BI dashboards he delivered exceeded our expectations.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>Sophia Nguyen</h3>
+                <h4>Data Science Lead, NextOnAI</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Tunar’s recommendation system prototype for our streaming dataset was both accurate and
+                    efficient.
+                    It showed strong technical skill and creativity in model design.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Let’s collaborate on your next data-driven project or discuss analytics solutions tailored to your business.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Vilnius, Lithuania (available for remote and hybrid projects)</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+370 624 51171</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>tunar.memmedov2007@gmail.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form id="customForm" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+
+          <div class="row gy-4">
+
+            <!-- Name -->
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Name" required>
+            </div>
+
+            <!-- Surname -->
+            <div class="col-md-6">
+              <input type="text" name="surname" class="form-control" placeholder="Surname" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="col-md-6">
+              <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+
+            <!-- Address -->
+            <div class="col-md-12">
+              <input type="text" name="address" class="form-control" placeholder="Address" required>
+            </div>
+
+            <!-- Rating Questions -->
+            <div class="col-md-4">
+              <label class="form-label">Rate my Portfolio (1–10)</label>
+              <input type="number" name="rating1" min="1" max="10" class="form-control" required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Rate my Skills (1–10)</label>
+              <input type="number" name="rating2" min="1" max="10" class="form-control" required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Rate my Projects (1–10)</label>
+              <input type="number" name="rating3" min="1" max="10" class="form-control" required>
+            </div>
+
+            <!-- Submit -->
+            <div class="col-md-12 text-center">
+              <button type="submit">Submit</button>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- Form Data Output -->
+        <div id="formOutput" class="mt-4"></div>
+        <!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/tunar-mammadov-58254539b/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/zamimammadov"><i class="bi bi-github"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/memory-game.js"></script>
+
+</body>
+
+</html>

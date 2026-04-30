@@ -1,0 +1,845 @@
+/* TYPOGRAPHY SYSTEM */
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    color: #333;
+}
+
+
+
+/* GLOBAL LINKS */
+a {
+    color: #0055ff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #0033aa;
+}
+
+a:active {
+    color: #001f66;
+}
+
+
+
+/* BUTTONS */
+button,
+.btn {
+    background-color: #0055ff;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #003fcc;
+}
+
+button:active,
+.btn:active {
+    background-color: #002f99;
+}
+
+
+
+/* SPACING SCALE */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    margin-bottom: 48px;
+}
+
+
+
+/* Content blocks (surfaces) */
+.service-item,
+.resume-item,
+.portfolio-info {
+    padding: 28px 28px;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+
+
+
+/* Space between cards */
+.resume-item {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* COMPACT DARK NAVBAR (only version kept) */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    padding: 5px 0;
+}
+
+/* Navbar links */
+#navmenu ul li a {
+    padding: 7px 12px;
+    font-weight: 600;
+    font-size: 0.90rem;
+    color: #ffffffd9;
+    transition: 0.25s;
+    border-radius: 6px;
+}
+
+#navmenu ul li a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+#navmenu .active>a {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+
+
+/* BACK TO TOP BUTTON CUSTOM */
+#scroll-top {
+    background: #0055ff;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#scroll-top:hover {
+    background: #003ecc;
+}
+
+
+/* UNORDERED LIST – Resume kısmındaki bullet'ları özelleştir */
+.resume .resume-item ul {
+    list-style: none;
+    /* Varsayılan noktaları kaldır */
+    padding-left: 0;
+}
+
+.resume .resume-item ul li {
+    position: relative;
+    padding-left: 1.6rem;
+    /* Solda ikon için boşluk */
+    margin-bottom: 6px;
+}
+
+.resume .resume-item ul li::before {
+    content: "•";
+    /* İstersen "▹" veya başka ikon koy */
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    font-size: 1.1rem;
+    color: #0078ff;
+    /* Mavi özel bullet */
+    font-weight: 700;
+}
+
+/* NESTED LIST – iç içe ul olursa daha küçük ve gri yap */
+.resume .resume-item ul ul li::before {
+    content: "–";
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.hero {
+    min-height: 100vh;
+    /* Ekranın tamamını kaplasın */
+}
+
+
+/* ORDERED LIST – numaralı özel liste */
+.numbered-list {
+    counter-reset: step;
+    /* Sayaç sıfırla */
+    list-style: none;
+    padding-left: 0;
+}
+
+.numbered-list>li {
+    counter-increment: step;
+    /* Her li için +1 */
+    position: relative;
+    padding-left: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.numbered-list>li::before {
+    content: counter(step);
+    /* 1,2,3... yazdır */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: #0055ff;
+    color: #fff;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+
+
+/* PRICING SECTION – data block'ı tablo gibi yap */
+.pricing .pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    /* Tüm satırlar için aynı padding */
+    border-radius: 0;
+}
+
+/* SOL KOD SENDE ZATEN VARSA, SADECE RENKLERİ BELİRGİNLEŞTİR */
+.pricing .row.gy-4.gx-lg-5>.col-lg-6:nth-child(odd) .pricing-item {
+    background: #f8f9fb;
+    /* açık mavi */
+}
+
+.pricing .row.gy-4.gx-lg-5>.col-lg-6:nth-child(even) .pricing-item {
+    background: #ffffff;
+    /* beyaz */
+}
+
+/* Hover efekti */
+.pricing .pricing-item:hover {
+    background: #dce7ff !important;
+    border-left: 4px solid #0055ff;
+}
+
+/* Metin solda, fiyat sağda hizalı */
+.pricing .pricing-item h3 {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+}
+
+.pricing .pricing-item h4 {
+    min-width: 80px;
+    text-align: right;
+    /* Sayı (fiyat) sağa hizalı */
+    margin: 0;
+}
+
+
+.pricing-header-row {
+    max-width: 700px;
+    margin: 0 auto 8px auto;
+    padding: 8px 18px;
+    font-weight: 600;
+    background: #f0f3ff;
+    border-radius: 8px 8px 0 0;
+}
+
+
+/* Resume başlığı ile ilk kart arasındaki boşluk */
+.resume .resume-title {
+    margin-bottom: 24px;
+    /* ister 32px, 40px yapabilirsin */
+}
+
+.resume-item {
+    margin-top: 16px;      /* mevcut margin-bottom:20px yanına ekle */
+}
+
+
+
+
+
+
+
+
+
+/* ===== REQUIRED: CSS ANIMATIONS (1) ===== */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.index-page {
+    animation: pageFadeIn 700ms ease-out both;
+}
+
+/* ===== REQUIRED: CSS ANIMATIONS (2) ===== */
+@keyframes btnSheen {
+    0% {
+        transform: translateX(-140%) skewX(-20deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateX(220%) skewX(-20deg);
+        opacity: 0;
+    }
+}
+
+button,
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after,
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -60%;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+button:hover::after,
+.btn:hover::after {
+    animation: btnSheen 900ms ease-out;
+}
+
+/* ===== REQUIRED: CSS ANIMATION #2 (LINK UNDERLINE SLIDE) ===== */
+@keyframes underlineSlide {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+a.animated-link {
+    position: relative;
+}
+
+a.animated-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background: #0055ff;
+    transition: width 0.3s ease-out;
+}
+
+a.animated-link:hover::after {
+    animation: underlineSlide 0.3s forwards;
+}
+
+/* ===== REQUIRED: CSS ANIMATION #2 (LINK UNDERLINE SLIDE) ===== */
+@keyframes underlineSlide {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+a.animated-link {
+    position: relative;
+}
+
+a.animated-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background: #0055ff;
+    transition: width 0.3s ease-out;
+}
+
+a.animated-link:hover::after {
+    animation: underlineSlide 0.3s forwards;
+}
+
+
+
+/* ===== REQUIRED: CSS-ONLY LOADER ===== */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#preloader::before {
+    content: "";
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 6px solid rgba(0, 85, 255, 0.22);
+    border-top-color: #0055ff;
+    animation: spin 0.9s linear infinite;
+}
+
+
+/* ===== REQUIRED: ACCESSIBILITY (prefers-reduced-motion) ===== */
+@media (prefers-reduced-motion: reduce) {
+    .index-page {
+        animation: none !important;
+    }
+
+    #preloader::before {
+        animation: none !important;
+    }
+
+    button:hover::after,
+    .btn:hover::after {
+        animation: none !important;
+    }
+
+    * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* ===== OPTIONAL TASK: Animated Gradient Background ===== */
+@keyframes animatedGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-gradient {
+    background: linear-gradient(120deg,
+            #ff0000,
+            #111,
+            #d4d8da);
+    background-size: 200% 200%;
+    animation: animatedGradient 8s ease-in-out infinite;
+}
+
+
+
+/* ===== OPTIONAL TASK: Decorative Floating Circles ===== */
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 1;
+    }
+}
+
+.floating-shapes {
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-shapes::before,
+.floating-shapes::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(0, 85, 255, 0.20);
+    animation: floatUpDown 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-shapes::before {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    left: -20px;
+}
+
+.floating-shapes::after {
+    width: 70px;
+    height: 70px;
+    bottom: -20px;
+    right: -20px;
+    animation-delay: 1.5s;
+}
+
+
+
+
+
+
+
+#customForm .form-control {
+    margin-bottom: 10px;
+}
+
+#formOutput p {
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* ---------------------------------------
+   CONTACT FORM – VISUAL CONSISTENCY FIXES
+---------------------------------------- */
+
+/* Input & textarea spacing */
+#contact .php-email-form .form-control {
+    padding: 12px 15px;
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+    font-size: 15px;
+}
+
+/* Input margin between rows */
+#contact .php-email-form .form-control {
+    margin-bottom: 15px;
+}
+
+/* Rating input label styling */
+#contact label.form-label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Rating number input size match */
+#contact input[type=number] {
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    width: 100%;
+}
+
+/* Submit button alignment */
+#contact button[type=submit] {
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Output area styling */
+#formOutput {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.avg-red {
+    color: #dc3545 !important;
+}
+
+.avg-orange {
+    color: #fd7e14 !important;
+}
+
+.avg-green {
+    color: #198754 !important;
+}
+
+
+/* Top-middle slide-in/out toast */
+#submitToast {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%, -28px);
+    /* starts above */
+    opacity: 0;
+    z-index: 99999;
+
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: #198754;
+    color: #fff;
+    font-weight: 700;
+
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .25);
+    transition: opacity .28s ease, transform .28s ease;
+    pointer-events: none;
+}
+
+#submitToast.show {
+    transform: translate(-50%, 0);
+    /* slides down into view */
+    opacity: 1;
+}
+
+#submitToast.hide {
+    transform: translate(-50%, -28px);
+    /* slides back up */
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #submitToast {
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================
+       MEMORY GAME LAYOUT
+=============================== */
+.memory-game-wrap {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-areas:
+        "controls stats"
+        "board board";
+    gap: 18px 24px;
+    align-items: start;
+    position: relative;
+}
+
+.mg-controls {
+    grid-area: controls;
+}
+
+.mg-stats {
+    grid-area: stats;
+}
+
+#mgBoard {
+    grid-area: board;
+}
+
+@media (max-width: 992px) {
+    .memory-game-wrap {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "controls"
+            "stats"
+            "board";
+    }
+}
+
+/* Controls */
+.mg-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mg-right {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ============================
+       STATS PANEL
+=============================== */
+.mg-stats {
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+    min-height: 84px;
+}
+
+/* ============================
+           GAME BOARD
+=============================== */
+#mgBoard {
+    --mg-card: clamp(150px, 12vw, 150px);
+    /* REAL larger cards */
+    display: grid;
+    gap: 16px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px auto 0;
+    justify-content: center;
+    align-content: start;
+}
+
+#mgBoard.is-disabled {
+    pointer-events: none;
+    opacity: .65;
+}
+
+/* ============================
+           CARDS
+=============================== */
+.mg-card {
+    width: var(--mg-card);
+    aspect-ratio: 1 / 1;
+    perspective: 1100px;
+    cursor: pointer;
+    border-radius: 18px;
+    position: relative;
+}
+
+.mg-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .38s ease;
+}
+
+.mg-card.is-flipped .mg-card-inner {
+    transform: rotateY(180deg);
+}
+
+.mg-card-front,
+.mg-card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, .08);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .08);
+}
+
+/* FRONT */
+.mg-card-front {
+    background: linear-gradient(180deg, #fff, #f4f6f9);
+}
+
+.mg-card-front::after {
+    content: "?";
+    font-weight: 800;
+    font-size: 2.4rem;
+    opacity: .15;
+}
+
+/* BACK */
+.mg-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #111827, #334155);
+    color: #fff;
+    font-size: 2.8rem;
+}
+
+.mg-card.is-matched .mg-card-back {
+    background: linear-gradient(135deg, #0f172a, #0f766e);
+}
+
+/* ============================
+       BLACK OUTLINE
+=============================== */
+.mg-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(0, 0, 0, .65);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* ============================
+       WIN NOTIFICATION
+=============================== */
+#mgWin {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    z-index: 9999;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 197, 94, .35);
+    background: rgba(34, 197, 94, .12);
+    font-weight: 700;
+    font-size: .95rem;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: .2s;
+}
+
+#mgWin.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
